@@ -1,3 +1,3 @@
 const fs = require('fs');
 
-fs.writeFileSync('hello.txt', 'This is a node created file.');
+fs.writeFileSync('core-modules.txt', 'http \n https \n fs \n path \n os');
