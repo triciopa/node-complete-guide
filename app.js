@@ -33,18 +33,17 @@ const server = http.createServer((req, res) => {
       body.push(chunk);
     });
 
-    req.on('end', () => {
+    return req.on('end', () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
-      fs.writeFileSync('message.txt', message);
-      // console.log(parsedBody);
+      fs.writeFile('message.txt', message, (err) => {
+        res.statusCode = 302;
+        res.setHeader('Location', '/');
+        return res.end();
+      });
     });
-
     // fs.writeFileSync('message.txt', 'Dummy');
     // res.writeHead(302, {});
-    res.statusCode = 302;
-    res.setHeader('Location', '/');
-    return res.end();
   }
 
   res.setHeader('Content-Type', 'text/html');
