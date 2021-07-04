@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { builtinModules } = require('module');
 
 const requestHandler = (req, res) => {
   const url = req.url;
@@ -46,4 +47,12 @@ const requestHandler = (req, res) => {
   res.end();
 };
 
-module.exports = requestHandler;
+module.exports = {
+  handler: requestHandler,
+  someText: 'Text hard coded',
+};
+
+// module.exports.handler = requestHandler;
+// module.exports.someText = 'Text hard coded';
+
+// exports... shortcut available

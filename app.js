@@ -9,6 +9,8 @@ const routes = require('./routes');
 //   // process.exit() //---> quits execution of the event loop
 // });
 
-const server = http.createServer(routes);
+console.log(routes.someText);
+
+const server = http.createServer(routes.handler);
 
 server.listen(3000);
