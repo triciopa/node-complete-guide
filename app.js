@@ -1,17 +1,17 @@
-const http = require('http');
-const routes = require('./routes');
+const express = require('express');
+const app = express();
 
-// function rqListener(req,res) {
-// }
-// http.createServer(rqListener);
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+// const bodyParser = require('body-parser'); // Deprecated
 
-// const server = http.createServer((req, res) => {
-//   // console.log(req.url, req.method, req.headers);
-//   // process.exit() //---> quits execution of the event loop
-// });
+app.use(express.urlencoded({ extended: false }));
 
-console.log(routes.someText);
+app.use('/admin', adminRoutes);
+app.use('/shop', shopRoutes);
 
-const server = http.createServer(routes.handler);
+app.use((req, res, next) => {
+  res.status(404).send('<h1>Page not found</h1>');
+});
 
-server.listen(3000);
+app.listen(3000);
