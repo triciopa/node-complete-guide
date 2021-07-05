@@ -1,0 +1,30 @@
+{
+  "name": "node-complete-guide",
+  "version": "1.0.0",
+  "description": "Node.js course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triciopa/node-complete-guide.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Patricio Gatti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/triciopa/node-complete-guide/issues"
+  },
+  "homepage": "https://github.com/triciopa/node-complete-guide#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
