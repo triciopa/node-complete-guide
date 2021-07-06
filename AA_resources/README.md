@@ -13,3 +13,6 @@
     More on debugging Node.js: https://nodejs.org/en/docs/guides/debugging-getting-started/
 
     Debugging Node in Visual Studio Code: https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+
+\*\* PUG
+Want to learn more about Pug? Check out their official docs: https://pugjs.org/api/getting-started.html
